@@ -34,16 +34,6 @@ section {
   max-width: var(--maxWidth);
 }
 
-.menu {
-  padding: 15px;
-  border-radius: 0 0 3px 3px;
-  background-color: white;
-  width: fit-content;
-  max-width: var(--maxWidth);
-  box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.3), -10px 0 10px -5px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-}
-
 .column {
   width: min-content;
   max-width: var(--maxWidth);
@@ -70,14 +60,6 @@ section {
 
 .header_month-minimize {
   scale: 0;
-}
-
-.line {
-  width: 30px;
-  height: 4px;
-  background-color: black;
-  border-radius: 5px;
-  box-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
 }
 
 .page_title {
@@ -118,10 +100,6 @@ body {
   max-width: var(--maxWidth);
   position: sticky;
   top: 0;
-}
-
-.show {
-  display: flex;
 }
 
 .thing-grid {
@@ -169,13 +147,14 @@ body {
 
 .thing {
   border-style: solid;
+  border-width: 1px;
   padding: 10px;
 }
 
 section {
   width: 100%;
   box-sizing: border-box;
-
+  padding: 15px;
 }
 
 .section-heading {
@@ -187,7 +166,7 @@ section {
   padding-bottom: 5px;
   padding-left: 15px;
   margin: 0;
-  background-color:rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .thing-header {
