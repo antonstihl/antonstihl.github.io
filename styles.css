@@ -69,7 +69,7 @@ section {
 }
 
 .header_month-minimize {
-  transform: scale(0);
+  scale: 0;
 }
 
 .line {
