@@ -61,13 +61,15 @@ section {
   gap: 1rem;
 }
 
-.nav_button {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  background-color: white;
-  border: none;
-  margin-left: 1rem;
+.header_month {
+  width: min-content;
+  text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
+  transition-property: all;
+  transition-duration: 500ms;
+}
+
+.header_month-minimize {
+  transform: scale(0);
 }
 
 .line {
@@ -84,6 +86,7 @@ section {
   text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
   transition-property: all;
   transition-duration: 500ms;
+  min-width: max-content;
 }
 
 body {
@@ -172,10 +175,12 @@ body {
 section {
   width: 100%;
   box-sizing: border-box;
-  
+
 }
+
 .section-heading {
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-bottom: 1px;
   border-bottom-style: solid;
   padding-top: 5px;
