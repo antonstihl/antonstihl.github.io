@@ -18,7 +18,7 @@ const imgObserver = new IntersectionObserver(
       }
     });
   },
-  { rootMargin: "-78px", threshold: 0.05 }
+  { rootMargin: "-78px" }
 );
 
 imgObserver.observe(pic);
