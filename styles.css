@@ -6,16 +6,39 @@
 
 body {
   background-color: var(--bgColour);
-}
-
-* {
-  color: black;
   font-family: 'Palatino', serif;
+  color: black;
+  line-height: 1.2;
+  overscroll-behavior-y: none;
+  margin: 8px 8px 8px 8px;
 }
 
-h1,
-h2 {
+h1 {
+  font-size: xx-large;
+  font-weight: bold;
   text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
+}
+
+h2 {
+  font-size: x-large;
+  font-weight: bold;
+  text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
+}
+
+h3 {
+  font-size: large;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: medium;
+  font-weight: bold;
+}
+
+p {
+  font-size: medium;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .sticky {
@@ -23,15 +46,11 @@ h2 {
   top: 80px;
 }
 
-h3,
-h4 {
-  margin: 0
-}
-
 section {
   max-width: var(--maxWidth);
   width: 100%;
   padding: 0;
+  margin-bottom: 2rem;
 }
 
 .column {
@@ -68,11 +87,8 @@ section {
   text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
   transition-property: all;
   transition-duration: 500ms;
+  transition-timing-function: linear;
   min-width: max-content;
-}
-
-body {
-  overscroll-behavior-y: none;
 }
 
 .header {
@@ -112,12 +128,12 @@ body {
   width: 100%;
   list-style: none;
   padding: 0;
+  margin-top: 1rem;
 }
 
 .thumbnail-hide {
   position: relative;
   width: 0;
-  bottom: -39px;
   left: 50px;
   transition-property: all;
   transition-duration: 500ms;
@@ -140,7 +156,7 @@ body {
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 550px) {
   #about {
     grid-template-columns: 1fr 2fr;
   }
@@ -153,12 +169,11 @@ body {
   border-radius: 3px;
 }
 
-
 .section-heading {
   border-bottom: 1px;
   border-bottom-style: solid;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 15px;
   margin: 0;
   backdrop-filter: blur(4px);
@@ -212,8 +227,24 @@ body {
 
 .link {
   text-decoration-line: none;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  color: black;
 }
 
 .link:hover {
   color: darkslategrey;
+}
+
+.bullet-list {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  li {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 }
