@@ -10,7 +10,7 @@ body {
   color: black;
   line-height: 1.2;
   overscroll-behavior-y: none;
-  margin: 8px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
 }
 
 h1 {
@@ -88,6 +88,7 @@ section {
   border-color: black;
   border-bottom-style: solid;
   padding: 1rem;
+  justify-content: space-between;
 }
 
 .navbar {
@@ -109,18 +110,13 @@ section {
 }
 
 .thumbnail-hide {
-  position: relative;
   width: 0;
-  left: -50px;
   transition-property: all;
   transition-duration: 500ms;
 }
 
 .thumbnail-show {
   width: 46px;
-  position: relative;
-  top: 0px;
-  left: 0px;
 }
 
 .page_title--padding {
