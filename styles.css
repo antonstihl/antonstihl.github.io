@@ -129,7 +129,7 @@ section {
   }
 }
 
-.thing-grid {
+.card-grid {
   display: grid;
   align-content: center;
   grid-template-columns: 1fr;
@@ -141,21 +141,26 @@ section {
 }
 
 @media (min-width: 650px) {
-  .thing-grid {
+  .card-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.thing {
+.card {
   border-style: solid;
   border-width: 1px;
   padding: 10px;
   border-radius: 3px;
   cursor: pointer;
   height: min-content;
+  box-shadow: 2px 2px 2px black;
 }
 
-.hide-thing-content {
+.card:active {
+  box-shadow: 0.8px 0.8px 0.8px black;
+}
+
+.hide-card-content {
   p {
     display: none;
   }
@@ -182,7 +187,7 @@ section {
   padding-right: 15px;
 }
 
-.thing-header {
+.card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;

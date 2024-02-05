@@ -19,9 +19,9 @@ const imgObserver = new IntersectionObserver(
 
 imgObserver.observe(pic);
 
-document.querySelectorAll(".thing").forEach((e) =>
+document.querySelectorAll(".card").forEach((e) =>
   e.addEventListener("click", () => {
-    e.classList.toggle("hide-thing-content");
+    e.classList.toggle("hide-card-content");
     e.querySelector(".accordion-button")?.classList?.toggle(
       "accordion-button--open"
     );
