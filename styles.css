@@ -32,7 +32,7 @@ h3 {
 
 h4 {
   font-size: medium;
-  font-weight: bold;
+  font-style: italic;
 }
 
 p {
@@ -124,17 +124,6 @@ section {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-.thing-grid {
-  display: grid;
-  align-content: center;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
 .thumbnail-hide {
   position: relative;
   width: 0;
@@ -154,15 +143,26 @@ section {
   padding-left: 15px;
 }
 
-@media (min-width: 650px) {
-  .thing-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (min-width: 550px) {
   #about {
     grid-template-columns: 1fr 2fr;
+  }
+}
+
+.thing-grid {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+@media (min-width: 650px) {
+  .thing-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
