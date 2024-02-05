@@ -41,10 +41,6 @@ p {
   margin-bottom: 1rem;
 }
 
-svg {
-  filter: invert(0%) sepia(0%) saturate(7500%) hue-rotate(313deg) brightness(93%) contrast(107%);
-}
-
 .sticky {
   position: sticky;
   top: 80px;
@@ -246,7 +242,7 @@ section {
   padding: auto;
   transform: scale(1, -1);
   transition-property: all;
-  transition-duration: 200ms;
+  transition-duration: 500ms;
 }
 
 .accordion-button--open {
