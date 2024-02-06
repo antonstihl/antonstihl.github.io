@@ -2,6 +2,8 @@
   --bgColour: white;
   --maxWidth: 700px;
   --minWidth: 350px;
+  --shadowColour: black;
+  --textColour: black;
 }
 
 body {
@@ -155,13 +157,23 @@ section {
   border-radius: 3px;
   cursor: pointer;
   height: min-content;
-  box-shadow: 2px 2px 2px black;
-  transition-property: background-color;
-  transition-duration: 500ms;
+  box-shadow: 2px 2px 2px var(--shadowColour);
+  background-color: var(--bgColour);
+  transition-property: all;
+  transition-duration: 750ms;
+  color: var(--textColour);
+
+  button {
+    svg {
+      path {
+        stroke: var(--textColour);
+      }
+    }
+  }
 }
 
 .card:active {
-  box-shadow: 0.8px 0.8px 0.8px black;
+  box-shadow: 0.8px 0.8px 0.8px var(--shadowColour);
 }
 
 .section-heading {
@@ -263,62 +275,34 @@ section {
 }
 
 .ikea-theme {
-  background-color: #ffd800;
-  box-shadow: 2px 2px 2px #0058A3;
-}
-
-.ikea-theme:active {
-  box-shadow: 0.8px 0.8px 0.8px #0058A3;
+  --bgColour: #ffd800;
+  --shadowColour: #0058A3;
+  --textColour: black;
 }
 
 .nordnet-theme {
-  background-color: black;
-  color: white;
+  --bgColour: black;
+  --shadowColour: gray;
+  --textColour: white;
 }
 
 .evry-theme {
-  background-color: rgb(24, 57, 84);
-  color: white;
-  box-shadow: 2px 2px 2px rgb(87, 191, 194);
-
-  button {
-    svg {
-      path {
-        stroke: white;
-      }
-    }
-  }
-}
-
-.evry-theme:active {
-  box-shadow: 0.8px 0.8px 0.8px rgb(24, 57, 84);
+  --bgColour: rgb(24, 57, 84);
+  --shadowColour: gray;
+  /* --shadowColour: rgb(87, 191, 194); */
+  --textColour: white;
 }
 
 .chs-theme {
-  background-color: rgb(132, 54, 144);
-  color: white;
-
-  button {
-    svg {
-      path {
-        stroke: white;
-      }
-    }
-  }
+  --bgColour: rgb(132, 54, 144);
+  --textColour: white;
+  --shadowColour: gray;
 }
 
 .hide-card-content {
-  background-color: white;
-  color: black;
-  box-shadow: 2px 2px 2px black;
-
-  button {
-    svg {
-      path {
-        stroke: black;
-      }
-    }
-  }
+  --bgColour: white;
+  --textColour: black;
+  --shadowColour: black;
 
   p {
     display: none;
