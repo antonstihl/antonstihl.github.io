@@ -1,15 +1,25 @@
 :root {
-  --bgColour: white;
+  --bgColour: 255, 255, 255;
   --maxWidth: 700px;
   --minWidth: 350px;
-  --shadowColour: black;
-  --textColour: black;
+  --shadowColour: 0, 0, 0;
+  --textColour: 0, 0, 0;
+  --borderColour: var(--shadowColour);
+}
+
+.darkmode {
+  --bgColour: 0, 0, 0;
+  --maxWidth: 700px;
+  --minWidth: 350px;
+  --shadowColour: 128, 128, 128;
+  --textColour: 200, 200, 200;
+  --borderColour: var(--shadowColour);
 }
 
 body {
-  background-color: var(--bgColour);
+  background-color: rgb(var(--bgColour));
   font-family: 'Palatino', serif;
-  color: black;
+  color: rgb(var(--textColour));
   line-height: 1.2;
   overscroll-behavior-y: none;
   margin: 0px 8px 8px 8px;
@@ -18,13 +28,12 @@ body {
 h1 {
   font-size: xx-large;
   font-weight: bold;
-  text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
 }
 
 h2 {
   font-size: x-large;
   font-weight: bold;
-  text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
+  z-index: 10;
 }
 
 h3 {
@@ -41,7 +50,6 @@ p {
   font-size: medium;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  /* color: inherit; */
 }
 
 .sticky {
@@ -53,7 +61,7 @@ section {
   max-width: var(--maxWidth);
   width: 100%;
   padding: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .column {
@@ -73,43 +81,38 @@ section {
   gap: 1rem;
 }
 
+@media (min-width: 550px) {
+  #about {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
 .page_title {
   font-variant: small-caps;
   user-select: none;
-  text-shadow: 1px 1px hsla(0, 0%, 64%, 0.5);
-  transition-property: all;
-  transition-duration: 500ms;
-  transition-timing-function: linear;
   min-width: max-content;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  height: 3rem;
-  border-bottom: 2px;
-  border-color: black;
-  border-bottom-style: solid;
-  padding: 1rem;
-  justify-content: space-between;
+  padding-left: 15px;
 }
 
 .navbar {
   min-width: var(--minWidth);
   width: 100%;
   height: 80px;
-  background-color: var(--bgColour);
-  transition-property: all;
-  transition-duration: 0.5s;
+  border-bottom: 2px;
+  border-color: rgb(var(--borderColour));
+  border-bottom-style: solid;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1rem;
+  margin-left: 1rem;
   z-index: 20;
   max-width: var(--maxWidth);
   position: sticky;
   top: 0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(var(--bgColour), 0.8);
 }
 
 .thumbnail-hide {
@@ -120,60 +123,7 @@ section {
 
 .thumbnail-show {
   width: 46px;
-}
-
-.page_title--padding {
-  padding-left: 15px;
-}
-
-@media (min-width: 550px) {
-  #about {
-    grid-template-columns: 1fr 2fr;
-  }
-}
-
-.card-grid {
-  display: grid;
-  align-content: center;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-@media (min-width: 650px) {
-  .card-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.card {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  height: min-content;
-  box-shadow: 2px 2px 2px var(--shadowColour);
-  background-color: var(--bgColour);
-  transition-property: all;
-  transition-duration: 750ms;
-  color: var(--textColour);
-
-  button {
-    svg {
-      path {
-        stroke: var(--textColour);
-      }
-    }
-  }
-}
-
-.card:active {
-  box-shadow: 0.8px 0.8px 0.8px var(--shadowColour);
+  margin-right: 15px;
 }
 
 .section-heading {
@@ -185,18 +135,13 @@ section {
   margin: 0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(var(--bgColour), 0.65);
 }
 
 .section-content {
   padding-left: 15px;
   padding-right: 15px;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-bottom: 15px;
 }
 
 .fa {
@@ -221,26 +166,8 @@ section {
 }
 
 .fa-github {
-  background: black;
-  color: white;
-}
-
-.accordion-button {
-  background: none;
-  position: relative;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-  display: grid;
-  justify-items: center;
-  padding: auto;
-  transform: scale(1, -1);
-  transition-property: all;
-  transition-duration: 500ms;
-}
-
-.accordion-button--open {
-  transform: scale(1, 1);
+  background: rgb(var(--textColour));
+  color: rgb(var(--bgColour));
 }
 
 .footer {
@@ -254,11 +181,11 @@ section {
   text-decoration-line: none;
   font-family: 'FontAwesome';
   font-style: normal;
-  color: black;
+  color: rgb(var(--textColour));
 }
 
 .link:hover {
-  color: darkslategrey;
+  opacity: 0.7;
 }
 
 .bullet-list {
@@ -271,38 +198,46 @@ section {
   li {
     margin-top: 3px;
     margin-bottom: 3px;
+    margin-left: 1rem;
   }
 }
 
-.ikea-theme {
-  --bgColour: #ffd800;
-  --shadowColour: #0058A3;
-  --textColour: black;
+.card-grid {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
 }
 
-.nordnet-theme {
-  --bgColour: black;
-  --shadowColour: gray;
-  --textColour: white;
+@media (min-width: 650px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.evry-theme {
-  --bgColour: rgb(24, 57, 84);
-  --shadowColour: gray;
-  /* --shadowColour: rgb(87, 191, 194); */
-  --textColour: white;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.chs-theme {
-  --bgColour: rgb(132, 54, 144);
-  --textColour: white;
-  --shadowColour: gray;
-}
-
-.hide-card-content {
-  --bgColour: white;
-  --textColour: black;
-  --shadowColour: black;
+.card {
+  border-color: rgb(var(--borderColour));
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  height: min-content;
+  box-shadow: 2px 2px 2px rgb(var(--shadowColour));
+  background-color: rgb(var(--bgColour));
+  transition-property: all;
+  transition-duration: 750ms;
+  color: rgb(var(--textColour));
 
   p {
     display: none;
@@ -311,4 +246,87 @@ section {
   ul {
     display: none;
   }
+
+  button {
+    svg {
+      path {
+        stroke: rgb(var(--textColour));
+      }
+    }
+  }
+}
+
+.card--expand {
+  .accordion-button {
+    transform: scale(1, 1);
+  }
+
+  p {
+    display: initial;
+  }
+
+  ul {
+    display: initial;
+  }
+}
+
+.accordion-button {
+  display: grid;
+  justify-items: center;
+  padding: auto;
+  transform: scale(1, -1);
+  transition-property: all;
+  transition-duration: 500ms;
+  margin-top: 5px;
+
+  svg {
+    path {
+      transition-property: all;
+      transition-duration: 500ms;
+      stroke: rgb(var(--textColour));
+    }
+  }
+}
+
+.card:active {
+  box-shadow: 0.8px 0.8px 0.8px rgb(var(--shadowColour));
+}
+
+.ikea-theme {
+  --bgColour: 255, 216, 0;
+  --shadowColour: 0, 88, 163;
+  --textColour: 0, 0, 0;
+}
+
+.nordnet-theme {
+  --bgColour: 0, 0, 0;
+  --shadowColour: 128, 128, 128;
+  --textColour: 255, 255, 255;
+}
+
+.evry-theme {
+  --bgColour: 24, 57, 84;
+  --shadowColour: 128, 128, 128;
+  --textColour: 255, 255, 255;
+}
+
+.chs-theme {
+  --bgColour: 132, 54, 144;
+  --textColour: 255, 255, 255;
+  --shadowColour: 128, 128, 128;
+}
+
+.dark-mode-button {
+  background-color: rgb(var(--textColour));
+  color: rgb(var(--bgColour));
+  font: inherit;
+  border: none;
+  box-shadow: 2px 2px 2px rgb(var(--shadowColour));
+  padding: 4px 8px;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+.dark-mode-button:active {
+  box-shadow: 0.8px 0.8px 0.8px rgb(var(--shadowColour));
 }
