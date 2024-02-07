@@ -330,3 +330,18 @@ section {
 .dark-mode-button:active {
   box-shadow: 0.8px 0.8px 0.8px rgb(var(--shadowColour));
 }
+
+.sun {
+  fill: rgb(var(--textColour));
+  z-index: 30;
+}
+
+.disc {
+  fill: rgb(var(--bgColour));
+  z-index: 30;
+}
+
+.disc--hidden {
+  display: none;
+  fill: none;
+}

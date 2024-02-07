@@ -40,4 +40,7 @@ document.querySelectorAll(".card").forEach((e) =>
 
 function toggleDarkMode() {
   document.body.classList.toggle("darkmode");
+  const moonMaker = document.getElementById("moon-maker");
+  moonMaker.classList.toggle("disc");
+  moonMaker.classList.toggle("disc--hidden");
 }
