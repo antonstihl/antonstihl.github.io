@@ -12,7 +12,7 @@
   --maxWidth: 700px;
   --minWidth: 350px;
   --shadowColour: 128, 128, 128;
-  --textColour: 200, 200, 200;
+  --textColour: 220, 220, 220;
   --borderColour: var(--shadowColour);
 }
 
