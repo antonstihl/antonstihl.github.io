@@ -121,6 +121,8 @@ section {
   width: 0;
   transition-property: all;
   transition-duration: 500ms;
+  display: none;
+  /*hide temporarily*/
 }
 
 .thumbnail-show {
@@ -307,17 +309,62 @@ section {
   --textColour: white;
 }
 
-.dark-mode-button {
-  background-color: var(--textColour);
-  color: var(--bgColour);
-  font: inherit;
-  border: none;
-  box-shadow: 2px 2px 2px var(--shadowColour);
-  padding: 4px 8px;
-  font-family: monospace;
-  cursor: pointer;
+.dark-mode-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  background-color: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--textColour);
+  width: 50px;
+  height: 25px;
+  margin: 0 10px 0 0;
+  --transitionDuration: 750ms;
+  transition-property: all;
+  transition-duration: var(--transitionDuration);
 }
 
-.dark-mode-button:active {
-  box-shadow: 0.8px 0.8px 0.8px var(--shadowColour);
+.dark-mode-toggle::before {
+  content: "☀️";
+  width: 16px;
+  height: 16px;
+  background-color: none;
+  border-radius: 50%;
+  translate: -3px;
+  transition-property: all;
+  transition-duration: var(--transitionDuration);
+}
+
+.dark-mode-toggle::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--textColour);
+  border-radius: 50%;
+  translate: 3px;
+  transition-property: all;
+  transition-duration: var(--transitionDuration);
+  transition-duration: 1s;
+}
+
+.dark-mode-toggle:checked::before {
+  content: "🌛";
+  width: 16px;
+  height: 16px;
+  background-color: none;
+  border-radius: 50%;
+  translate: 22px;
+}
+
+.dark-mode-toggle:checked::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--textColour);
+  border-radius: 50%;
+  translate: -20px;
 }
