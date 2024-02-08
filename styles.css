@@ -1,25 +1,27 @@
 :root {
-  --bgColour: 255, 255, 255;
+  --bgColour: white;
+  --bgColourNum: 255, 255, 255;
   --maxWidth: 700px;
   --minWidth: 350px;
-  --shadowColour: 0, 0, 0;
-  --textColour: 0, 0, 0;
+  --shadowColour: black;
+  --textColour: black;
   --borderColour: var(--shadowColour);
 }
 
 .darkmode {
-  --bgColour: 0, 0, 0;
+  --bgColour: black;
+  --bgColourNum: black;
   --maxWidth: 700px;
   --minWidth: 350px;
-  --shadowColour: 128, 128, 128;
-  --textColour: 220, 220, 220;
+  --shadowColour: rgb(128, 128, 128);
+  --textColour: rgb(220, 220, 220);
   --borderColour: var(--shadowColour);
 }
 
 body {
-  background-color: rgb(var(--bgColour));
+  background-color: var(--bgColour);
   font-family: 'Palatino', serif;
-  color: rgb(var(--textColour));
+  color: var(--textColour);
   line-height: 1.2;
   overscroll-behavior-y: none;
   margin: 0px 8px 8px 8px;
@@ -99,7 +101,7 @@ section {
   width: 100%;
   height: 80px;
   border-bottom: 2px;
-  border-color: rgb(var(--borderColour));
+  border-color: var(--borderColour);
   border-bottom-style: solid;
   display: flex;
   align-items: center;
@@ -112,7 +114,7 @@ section {
   top: 0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(var(--bgColour), 0.8);
+  background-color: rgba(var(--bgColourNum), 0.8);
 }
 
 .thumbnail-hide {
@@ -135,7 +137,7 @@ section {
   margin: 0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(var(--bgColour), 0.65);
+  background-color: rgba(var(--bgColourNum), 0.65);
 }
 
 .section-content {
@@ -166,8 +168,8 @@ section {
 }
 
 .fa-github {
-  background: rgb(var(--textColour));
-  color: rgb(var(--bgColour));
+  background: var(--textColour);
+  color: var(--bgColour);
 }
 
 .footer {
@@ -181,7 +183,7 @@ section {
   text-decoration-line: none;
   font-family: 'FontAwesome';
   font-style: normal;
-  color: rgb(var(--textColour));
+  color: var(--textColour);
 }
 
 .link:hover {
@@ -224,18 +226,18 @@ section {
 }
 
 .card {
-  border-color: rgb(var(--borderColour));
+  border-color: var(--borderColour);
   border-style: solid;
   border-width: 1px;
   padding: 10px;
   border-radius: 3px;
   cursor: pointer;
   height: min-content;
-  box-shadow: 2px 2px 2px rgb(var(--shadowColour));
-  background-color: rgb(var(--bgColour));
+  box-shadow: 2px 2px 2px var(--shadowColour);
+  background-color: var(--bgColour);
   transition-property: all;
   transition-duration: 750ms;
-  color: rgb(var(--textColour));
+  color: var(--textColour);
 
   p {
     display: none;
@@ -243,14 +245,6 @@ section {
 
   ul {
     display: none;
-  }
-
-  button {
-    svg {
-      path {
-        stroke: rgb(var(--textColour));
-      }
-    }
   }
 }
 
@@ -280,50 +274,50 @@ section {
     path {
       transition-property: all;
       transition-duration: 500ms;
-      stroke: rgb(var(--textColour));
+      stroke: var(--textColour);
     }
   }
 }
 
 .card:active {
-  box-shadow: 0.8px 0.8px 0.8px rgb(var(--shadowColour));
+  box-shadow: 0.8px 0.8px 0.8px var(--shadowColour);
 }
 
 .ikea-theme {
-  --bgColour: 255, 216, 0;
-  --shadowColour: 0, 88, 163;
-  --textColour: 0, 0, 0;
+  --bgColour: rgb(255, 216, 0);
+  --shadowColour: rgb(128, 128, 128);
+  --textColour: black;
 }
 
 .nordnet-theme {
-  --bgColour: 0, 0, 0;
-  --shadowColour: 128, 128, 128;
-  --textColour: 255, 255, 255;
+  --bgColour: black;
+  --shadowColour: rgb(128, 128, 128);
+  --textColour: white;
 }
 
 .evry-theme {
-  --bgColour: 24, 57, 84;
-  --shadowColour: 128, 128, 128;
-  --textColour: 255, 255, 255;
+  --bgColour: rgb(24, 57, 84);
+  --shadowColour: rgb(128, 128, 128);
+  --textColour: white;
 }
 
 .chs-theme {
-  --bgColour: 132, 54, 144;
-  --textColour: 255, 255, 255;
-  --shadowColour: 128, 128, 128;
+  --bgColour: rgb(132, 54, 144);
+  --shadowColour: rgb(128, 128, 128);
+  --textColour: white;
 }
 
 .dark-mode-button {
-  background-color: rgb(var(--textColour));
-  color: rgb(var(--bgColour));
+  background-color: var(--textColour);
+  color: var(--bgColour);
   font: inherit;
   border: none;
-  box-shadow: 2px 2px 2px rgb(var(--shadowColour));
+  box-shadow: 2px 2px 2px var(--shadowColour);
   padding: 4px 8px;
   font-family: monospace;
   cursor: pointer;
 }
 
 .dark-mode-button:active {
-  box-shadow: 0.8px 0.8px 0.8px rgb(var(--shadowColour));
+  box-shadow: 0.8px 0.8px 0.8px var(--shadowColour);
 }
