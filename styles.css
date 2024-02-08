@@ -345,7 +345,7 @@ section {
   height: 16px;
   background-color: var(--textColour);
   border-radius: 50%;
-  translate: 3px;
+  translate: 4px;
   transition-property: all;
   transition-duration: var(--transitionDuration);
   transition-duration: 1s;
@@ -366,5 +366,5 @@ section {
   height: 16px;
   background-color: var(--textColour);
   border-radius: 50%;
-  translate: -20px;
+  translate: -19px;
 }
