@@ -191,13 +191,11 @@ section {
 .bullet-list {
   list-style-type: disc;
   list-style-position: outside;
-  margin-left: 2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 
   li {
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin-top: 5px;
     margin-left: 1rem;
   }
 }
@@ -262,11 +260,11 @@ section {
   }
 
   p {
-    display: initial;
+    display: block;
   }
 
   ul {
-    display: initial;
+    display: block;
   }
 }
 
@@ -277,7 +275,6 @@ section {
   transform: scale(1, -1);
   transition-property: all;
   transition-duration: 500ms;
-  margin-top: 5px;
 
   svg {
     path {
