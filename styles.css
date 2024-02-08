@@ -312,11 +312,11 @@ section {
 .dark-mode-toggle {
   appearance: none;
   -webkit-appearance: none;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-  background-color: none;
+  background-color: transparent;
   border-style: solid;
   border-width: 1px;
   border-color: var(--textColour);
@@ -332,7 +332,7 @@ section {
   content: "☀️";
   width: 16px;
   height: 16px;
-  background-color: none;
+  background-color: transparent;
   border-radius: 50%;
   translate: -3px;
   transition-property: all;
@@ -355,9 +355,9 @@ section {
   content: "🌛";
   width: 16px;
   height: 16px;
-  background-color: none;
+  background-color: transparent;
   border-radius: 50%;
-  translate: 22px;
+  translate: 23px;
 }
 
 .dark-mode-toggle:checked::after {

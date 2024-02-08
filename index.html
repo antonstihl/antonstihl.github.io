@@ -20,6 +20,19 @@
       <img src="public/anton_portratt_brollop.jpg" style="max-width: 60px; border-radius: 50%;" class="thumbnail-hide"
         title="A photo of Anton in a green forest, wearing a tuxedo.">
       <input type="checkbox" class="dark-mode-toggle" onclick="toggleDarkMode()" />
+      <script>
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("darkmode");
+          document.querySelector(".dark-mode-toggle").checked = true;
+        }
+
+        document.querySelector(".dark-mode-toggle").style.display = "flex";
+
+        function toggleDarkMode() {
+          const darkModeToggledOn = document.body.classList.toggle("darkmode");
+          localStorage.setItem("theme", darkModeToggledOn ? "dark" : "light");
+        }
+      </script>
     </div>
     <section id="about">
       <img src="public/anton_portratt_brollop.jpg" id="portrait"
@@ -205,7 +218,7 @@
         <a href="https://github.com/antonstihl" class="fa fa-github" style="font-size: 30px;"></a>
       </div>
       <i style="text-wrap: wrap; text-align: center;">
-        I write this page in vanilla <br> HTML, CSS and JS.
+        This page is just vanilla <br> HTML, CSS and JS. Enjoy.
         <a href="https://github.com/antonstihl/antonstihl.github.io" class="link">&#xf092;</a>
       </i>
     </section>

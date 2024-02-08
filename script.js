@@ -37,7 +37,3 @@ document.querySelectorAll(".card").forEach((e) =>
     }
   })
 );
-
-function toggleDarkMode() {
-  document.body.classList.toggle("darkmode");
-}
