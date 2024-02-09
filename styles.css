@@ -3,6 +3,7 @@
   --bgColourNum: 255, 255, 255;
   --maxWidth: 700px;
   --minWidth: 350px;
+  --transitionDuration: 750ms;
   --shadowColour: black;
   --textColour: black;
   --borderColour: var(--shadowColour);
@@ -166,6 +167,8 @@ section {
     grid-column: span var(--x)/auto; grid-row: span var(--x)/auto;
     word-break: break-word;
     aspect-ratio: 2 / 1;
+    transition-property: all;
+    transition-duration: var(--transitionDuration);
   }
 }
 
@@ -344,7 +347,6 @@ section {
   width: 50px;
   height: 25px;
   margin: 0 10px 0 0;
-  --transitionDuration: 750ms;
   transition-property: all;
   transition-duration: var(--transitionDuration);
 }
