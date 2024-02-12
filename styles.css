@@ -167,8 +167,6 @@ section {
     grid-column: span var(--x)/auto; grid-row: span var(--x)/auto;
     word-break: break-word;
     aspect-ratio: 2 / 1;
-    transition-property: all;
-    transition-duration: var(--transitionDuration);
   }
 }
 
