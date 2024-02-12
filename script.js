@@ -1,23 +1,14 @@
-const thumbnail = document.querySelector(".thumbnail-hide");
-const pageTitle = document.querySelector(".page_title");
-const header = document.querySelector(".header");
-const pic = document.getElementById("portrait");
-
-const imgObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        thumbnail.classList.add("thumbnail-show");
-      }
-      if (entry.isIntersecting) {
-        thumbnail.classList.remove("thumbnail-show");
-      }
-    });
-  },
-  { rootMargin: "-78px" }
+const revealObserver = new IntersectionObserver((entries) =>
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal");
+    }
+  })
 );
 
-imgObserver.observe(pic);
+document
+  .querySelectorAll(".tech-grid li")
+  .forEach((e) => revealObserver.observe(e));
 
 document.querySelectorAll(".card").forEach((e) =>
   e.addEventListener("click", () => {

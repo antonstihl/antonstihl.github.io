@@ -157,6 +157,7 @@ section {
   gap: 5px;
   grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
   --x: 1;
+
   li {
     background-color: var(--colour);
     color: white;
@@ -164,10 +165,20 @@ section {
     align-content: center;
     text-align: center;
     border-radius: 10px;
-    grid-column: span var(--x)/auto; grid-row: span var(--x)/auto;
+    grid-column: span var(--x)/auto;
+    grid-row: span var(--x)/auto;
     word-break: break-word;
     aspect-ratio: 2 / 1;
+    position: relative;
+    transform: scale(0);
+    transition-property: left, transform;
+    transition-duration: var(--transitionDuration);
   }
+}
+
+.tech-grid li.reveal {
+  left: 0;
+  transform: none;
 }
 
 .fa {
