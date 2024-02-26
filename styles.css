@@ -248,10 +248,8 @@ section {
   margin-top: 1rem;
 }
 
-@media (min-width: 650px) {
-  .card-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .card-header {
