@@ -115,7 +115,7 @@ section {
   top: 0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(var(--bgColourNum), 0.7);
+  background-color: rgba(var(--bgColourNum), 0.9);
 }
 
 .thumbnail-hide {
