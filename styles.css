@@ -56,7 +56,6 @@ p {
 
 section {
   max-width: var(--maxWidth);
-  /* width: 100%; */
   margin-block: 1rem;
 
   h2 {
@@ -232,7 +231,7 @@ footer {
   border-radius: 3px;
   cursor: pointer;
   height: min-content;
-  box-shadow: 2px 2px 2px var(--shadowColour);
+  box-shadow: 2px 2px 1px var(--shadowColour);
   background-color: var(--bgColour);
   transition-property: all;
   transition-duration: 750ms;
@@ -276,10 +275,6 @@ footer {
       stroke: var(--textColour);
     }
   }
-}
-
-.card:active {
-  box-shadow: 0.8px 0.8px 0.8px var(--shadowColour);
 }
 
 .ikea-theme {
