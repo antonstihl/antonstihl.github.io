@@ -9,7 +9,7 @@
   --borderColour: var(--shadowColour);
 }
 
-body:has(.dark-mode-toggle:checked) {
+:root:has(.dark-mode-toggle:checked) {
   --bgColour: black;
   --bgColourNum: 0, 0, 0;
   --maxWidth: 700px;
