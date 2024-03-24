@@ -136,11 +136,6 @@ section {
   margin-top: 1rem;
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-}
-
 .card {
   border-color: var(--borderColour);
   border-style: solid;
@@ -148,50 +143,38 @@ section {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  height: min-content;
+  overflow: hidden;
   box-shadow: 2px 2px 1px var(--shadowColour);
   background-color: var(--bgColour);
   transition-property: all;
-  transition-duration: 750ms;
+  transition-duration: 250ms;
   color: var(--textColour);
 
-  p {
-    display: none;
+  .card-header {
+    display: flex;
+    justify-content: space-between;
   }
 
-  ul {
-    display: none;
+  > :not(.card-header) {
+    opacity: 0;
+    overflow: hidden;
+    display: block;
+    transition-property: max-height, margin-block;
+    transition-duration: 250ms;
+    max-height: 0px;
+    margin-block: 0;
   }
 }
 
 .card--expand {
-  .accordion-button {
-    transform: scale(1, 1);
-  }
+  transition-duration: 750ms;
 
-  p {
+  > :not(.card-header) {
+    opacity: 1;
     display: block;
-  }
-
-  ul {
-    display: block;
-  }
-}
-
-.accordion-button {
-  display: grid;
-  justify-items: center;
-  padding: auto;
-  transform: scale(1, -1);
-  transition-property: all;
-  transition-duration: 500ms;
-
-  svg {
-    path {
-      transition-property: all;
-      transition-duration: 500ms;
-      stroke: var(--textColour);
-    }
+    transition-duration: 750ms;
+    max-height: 100vh;
+    margin-block: 1rem;
   }
 }
 
