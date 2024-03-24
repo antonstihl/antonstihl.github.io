@@ -94,6 +94,7 @@ section {
 
   > :not(h2) {
     padding-inline: 1rem;
+    padding-block: 0.5rem;
   }
 
   h2 {
