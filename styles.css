@@ -129,8 +129,8 @@ section {
 
 .card-grid {
   display: grid;
-  align-content: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: flex-start;
   gap: 1rem;
   list-style: none;
   margin-top: 1rem;
@@ -156,9 +156,7 @@ section {
   }
 
   > :not(.card-header) {
-    opacity: 0;
     overflow: hidden;
-    display: block;
     transition-property: max-height, margin-block;
     transition-duration: 250ms;
     max-height: 0px;
@@ -170,8 +168,6 @@ section {
   transition-duration: 750ms;
 
   > :not(.card-header) {
-    opacity: 1;
-    display: block;
     transition-duration: 750ms;
     max-height: 100vh;
     margin-block: 1rem;
