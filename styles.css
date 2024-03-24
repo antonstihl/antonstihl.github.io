@@ -147,7 +147,7 @@ section {
   box-shadow: 2px 2px 1px var(--shadowColour);
   background-color: var(--bgColour);
   transition-property: all;
-  transition-duration: 250ms;
+  transition-duration: calc(var(--transitionDuration) / 3);
   color: var(--textColour);
 
   .card-header {
@@ -158,17 +158,17 @@ section {
   > :not(.card-header) {
     overflow: hidden;
     transition-property: max-height, margin-block;
-    transition-duration: 250ms;
+    transition-duration: calc(var(--transitionDuration) / 3);
     max-height: 0px;
     margin-block: 0;
   }
 }
 
 .card--expand {
-  transition-duration: 750ms;
+  transition-duration: calc(var(--transitionDuration) / 3);
 
   > :not(.card-header) {
-    transition-duration: 750ms;
+    transition-duration: calc(var(--transitionDuration) / 3);
     max-height: 100vh;
     margin-block: 1rem;
   }
