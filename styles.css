@@ -225,7 +225,7 @@ section {
   padding: 0;
   gap: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(7ch, 1fr));
   --x: 1;
 
   li {
@@ -237,8 +237,9 @@ section {
     border-radius: 5px;
     grid-column: span var(--x)/auto;
     grid-row: span var(--x)/auto;
-    padding-block: 0.5rem;
-    word-break: break-word;
+    aspect-ratio: 2;
+    padding: 0.5rem;
+    box-sizing: border-box;
     transform: scale(0);
     transition-property: left, transform;
     transition-duration: var(--transitionDuration);
