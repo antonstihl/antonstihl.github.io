@@ -172,30 +172,30 @@ section {
     max-height: 100vh;
     margin-block: 1rem;
   }
-}
 
-.ikea-theme {
-  --bgColour: rgb(255, 216, 0);
-  --shadowColour: rgb(128, 128, 128);
-  --textColour: black;
-}
+  &.ikea-theme {
+    --bgColour: rgb(255, 216, 0);
+    --shadowColour: rgb(128, 128, 128);
+    --textColour: black;
+  }
 
-.nordnet-theme {
-  --bgColour: black;
-  --shadowColour: rgb(128, 128, 128);
-  --textColour: white;
-}
+  &.nordnet-theme {
+    --bgColour: black;
+    --shadowColour: rgb(128, 128, 128);
+    --textColour: white;
+  }
 
-.evry-theme {
-  --bgColour: rgb(24, 57, 84);
-  --shadowColour: rgb(128, 128, 128);
-  --textColour: white;
-}
+  &.evry-theme {
+    --bgColour: rgb(24, 57, 84);
+    --shadowColour: rgb(128, 128, 128);
+    --textColour: white;
+  }
 
-.chs-theme {
-  --bgColour: rgb(132, 54, 144);
-  --shadowColour: rgb(128, 128, 128);
-  --textColour: white;
+  &.chs-theme {
+    --bgColour: rgb(132, 54, 144);
+    --shadowColour: rgb(128, 128, 128);
+    --textColour: white;
+  }
 }
 
 .tech-grid {
@@ -277,7 +277,8 @@ footer {
 .dark-mode-toggle {
   appearance: none;
   -webkit-appearance: none;
-  display: none;
+  display: flex;
+  visibility: hidden;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
