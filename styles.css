@@ -100,9 +100,7 @@ header {
   z-index: 20;
   position: sticky;
   top: 0;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  background-color: rgba(var(--bgColourNum), 0.9);
+  background-color: rgb(var(--bgColourNum));
 }
 
 .section-heading {
