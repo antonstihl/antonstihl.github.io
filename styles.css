@@ -126,7 +126,6 @@ section {
   }
 }
 
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -161,6 +160,11 @@ section {
     transition-duration: calc(var(--transitionDuration) / 3);
     max-height: 0px;
     margin-block: 0;
+  }
+
+  &:hover:not(.card--expand) {
+    box-shadow: 5px 5px 1px var(--shadowColour);
+    translate: 0 -4px;
   }
 }
 
