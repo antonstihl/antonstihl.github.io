@@ -282,6 +282,7 @@ footer {
   appearance: none;
   -webkit-appearance: none;
   display: flex;
+  cursor: pointer;
   visibility: hidden;
   align-items: center;
   justify-content: center;
