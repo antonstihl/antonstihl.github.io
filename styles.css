@@ -2,7 +2,6 @@
   --bgColour: white;
   --bgColourNum: 255, 255, 255;
   --maxWidth: 700px;
-  --minWidth: 350px;
   --transitionDuration: 750ms;
   --shadowColour: black;
   --textColour: black;
@@ -13,7 +12,6 @@
   --bgColour: black;
   --bgColourNum: 0, 0, 0;
   --maxWidth: 700px;
-  --minWidth: 350px;
   --shadowColour: rgb(128, 128, 128);
   --textColour: rgb(220, 220, 220);
   --borderColour: var(--shadowColour);
@@ -67,24 +65,24 @@ p {
 }
 
 header {
-  min-width: var(--minWidth);
   height: 80px;
   border-bottom: 2px;
   border-color: var(--borderColour);
   border-bottom-style: solid;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   z-index: 20;
   position: sticky;
   top: 0;
   background-color: rgb(var(--bgColourNum));
+  padding-left: 1rem;
 
   h1 {
     font-variant: small-caps;
     user-select: none;
     min-width: max-content;
-    padding-left: 1rem;
   }
 }
 
@@ -139,36 +137,39 @@ section {
   border-color: var(--borderColour);
   border-style: solid;
   border-width: 1px;
-  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
   box-shadow: 2px 2px 1px var(--shadowColour);
   background-color: var(--bgColour);
-  transition-property: all;
-  transition-duration: calc(var(--transitionDuration) / 3);
   color: var(--textColour);
+
+  .card-header::marker {
+    display: none;
+  }
 
   .card-header {
     display: flex;
     justify-content: space-between;
+    padding: 10px;
   }
 
   > :not(.card-header) {
-    overflow: hidden;
-    transition-property: max-height, margin-block;
-    transition-duration: calc(var(--transitionDuration) / 3);
-    max-height: 0px;
-    margin-block: 0;
+    padding: 10px;
   }
 
-  &:hover:not(.card--expand) {
+  > :not(.card-header):not([open]) {
+    max-height: 0;
+    display: block;
+  }
+
+  /* &:hover:not(.card--expand) {
     box-shadow: 5px 5px 1px var(--shadowColour);
     translate: 0 -4px;
-  }
+  } */
 }
 
-.card--expand {
+.card[open] {
   transition-duration: calc(var(--transitionDuration) / 3);
 
   > :not(.card-header) {
@@ -202,36 +203,11 @@ section {
   }
 }
 
-.tech-grid {
+.tech-list {
   font-family: monospace;
   font-size: small;
-  margin: 1rem;
-  padding: 0;
-  gap: 0.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6ch, 1fr));
-  --x: 1;
-
-  li {
-    background-color: var(--colour, black);
-    color: white;
-    display: grid;
-    align-content: center;
-    text-align: center;
-    border-radius: 5px;
-    grid-column: span var(--x)/auto;
-    aspect-ratio: 2.5;
-    padding: 0.5rem;
-    box-sizing: border-box;
-    transform: scale(0);
-    transition-property: left, transform;
-    transition-duration: var(--transitionDuration);
-  }
-
-  li.reveal {
-    left: 0;
-    transform: none;
-  }
+  list-style: square;
+  list-style-position: inside;
 }
 
 footer {
