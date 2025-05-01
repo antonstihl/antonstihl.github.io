@@ -77,7 +77,6 @@ header {
   h1 {
     font-variant: small-caps;
     user-select: none;
-    
   }
 }
 
@@ -134,7 +133,6 @@ section, footer {
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
-  cursor: pointer;
   box-shadow: 2px 2px 1px var(--shadowColour);
   background-color: var(--bgColour);
   color: var(--textColour);
@@ -147,14 +145,26 @@ section, footer {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    cursor: pointer;
   }
 
   > :not(.card-header) {
     padding: 10px;
   }
 
-  > :not(.card-header):not([open]) {
-    display: block;
+  .labels {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    gap: 0.5rem;
+
+    li {
+      background-color: white;
+      color: black;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--borderColour);
+    }
   }
 }
 
