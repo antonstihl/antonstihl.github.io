@@ -11,7 +11,6 @@
 :root:has(.dark-mode-toggle:checked) {
   --bgColour: black;
   --bgColourNum: 0, 0, 0;
-  --maxWidth: 700px;
   --shadowColour: rgb(128, 128, 128);
   --textColour: rgb(220, 220, 220);
   --borderColour: var(--shadowColour);
@@ -49,14 +48,11 @@ h4 {
 
 p {
   font-size: medium;
-  margin-block: 1rem;
 }
 
 .bullet-list {
   list-style-type: disc;
   list-style-position: outside;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 
   li {
     margin-top: 5px;
@@ -70,7 +66,6 @@ header {
   border-color: var(--borderColour);
   border-bottom-style: solid;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   z-index: 20;
@@ -82,15 +77,14 @@ header {
   h1 {
     font-variant: small-caps;
     user-select: none;
-    min-width: max-content;
+    
   }
 }
 
-section {
-  max-width: var(--maxWidth);
+section, footer {
   margin-block: 1rem;
 
-  > :not(h2) {
+  > * {
     padding-inline: 1rem;
     padding-block: 0.5rem;
   }
@@ -99,8 +93,6 @@ section {
     position: sticky;
     top: 80px;
     border-bottom: 1px solid;
-    padding-block: 0.5rem;
-    padding-left: 1rem;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     background-color: rgba(var(--bgColourNum), 0.6);
@@ -116,6 +108,10 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+
+  p {
+    margin-block: 1rem;
+  }
 }
 
 @media (min-width: 550px) {
@@ -139,7 +135,6 @@ section {
   border-width: 1px;
   border-radius: 5px;
   cursor: pointer;
-  overflow: hidden;
   box-shadow: 2px 2px 1px var(--shadowColour);
   background-color: var(--bgColour);
   color: var(--textColour);
@@ -159,25 +154,11 @@ section {
   }
 
   > :not(.card-header):not([open]) {
-    max-height: 0;
     display: block;
   }
-
-  /* &:hover:not(.card--expand) {
-    box-shadow: 5px 5px 1px var(--shadowColour);
-    translate: 0 -4px;
-  } */
 }
 
 .card[open] {
-  transition-duration: calc(var(--transitionDuration) / 3);
-
-  > :not(.card-header) {
-    transition-duration: calc(var(--transitionDuration) / 3);
-    max-height: 100vh;
-    margin-block: 1rem;
-  }
-
   &.ikea-theme {
     --bgColour: rgb(255, 216, 0);
     --shadowColour: rgb(128, 128, 128);
